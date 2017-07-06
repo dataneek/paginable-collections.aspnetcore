@@ -5,9 +5,9 @@ PaginableCollections.AspNetCore
 [![NuGet](https://img.shields.io/nuget/v/paginablecollections.aspnetcore.svg)](https://www.nuget.org/packages/paginablecollections.aspnetcore) 
 [![NuGet](https://img.shields.io/nuget/dt/paginablecollections.aspnetcore.svg)](https://www.nuget.org/packages/paginablecollections.aspnetcore) 
 
-A light weight pagination framework for .NET and .NET Core.
+A light weight pagination framework for .NET and .NET Core - now with additional MVC6 support!
 
-### Installing PaginableCollections
+### Installing PaginableCollections.AspNetCore
 
 You should install [PaginableCollections.AspNetCore with NuGet](https://www.nuget.org/packages/paginablecollections.aspnetcore):
 
