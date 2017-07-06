@@ -5,7 +5,7 @@
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.Filters;
 
-    public class PaginableHeaderCondensedActionFilter : IAsyncActionFilter
+    public class CondensedActionFilter : IAsyncActionFilter
     {
         async Task IAsyncActionFilter.OnActionExecutionAsync(ActionExecutingContext context, ActionExecutionDelegate next)
         {
