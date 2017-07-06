@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.14
+VisualStudioVersion = 15.0.26403.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{288485C6-81F2-45A2-98CC-38819DD263D2}"
 	ProjectSection(SolutionItems) = preProject
@@ -12,9 +12,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{288485C6
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaginableCollections.AspNetCore", "src\PaginableCollections.AspNetCore\PaginableCollections.AspNetCore.csproj", "{CFBF66A6-08AE-4DA1-92F4-18E24CC793B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaginableCollections.AspNetCore.Tests", "tests\PaginableCollections.AspNetCore.Tests\PaginableCollections.AspNetCore.Tests.csproj", "{73F8199F-B4BC-47A9-8F59-D3D6647D45A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaginableCollections.AspNetCore.Tests", "tests\PaginableCollections.AspNetCore.Tests\PaginableCollections.AspNetCore.Tests.csproj", "{73F8199F-B4BC-47A9-8F59-D3D6647D45A8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{FE767F3D-FD81-459E-9BD0-1B9130CE14F8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{408B4CEC-0F1A-4DF5-8DFC-BE31149C94B5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
