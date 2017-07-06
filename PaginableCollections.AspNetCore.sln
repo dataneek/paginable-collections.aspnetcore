@@ -12,6 +12,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{288485C6
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaginableCollections.AspNetCore", "src\PaginableCollections.AspNetCore\PaginableCollections.AspNetCore.csproj", "{CFBF66A6-08AE-4DA1-92F4-18E24CC793B1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaginableCollections.AspNetCore.Tests", "tests\PaginableCollections.AspNetCore.Tests\PaginableCollections.AspNetCore.Tests.csproj", "{73F8199F-B4BC-47A9-8F59-D3D6647D45A8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{FE767F3D-FD81-459E-9BD0-1B9130CE14F8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -22,8 +26,15 @@ Global
 		{CFBF66A6-08AE-4DA1-92F4-18E24CC793B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CFBF66A6-08AE-4DA1-92F4-18E24CC793B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CFBF66A6-08AE-4DA1-92F4-18E24CC793B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73F8199F-B4BC-47A9-8F59-D3D6647D45A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73F8199F-B4BC-47A9-8F59-D3D6647D45A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73F8199F-B4BC-47A9-8F59-D3D6647D45A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73F8199F-B4BC-47A9-8F59-D3D6647D45A8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{73F8199F-B4BC-47A9-8F59-D3D6647D45A8} = {FE767F3D-FD81-459E-9BD0-1B9130CE14F8}
 	EndGlobalSection
 EndGlobal
