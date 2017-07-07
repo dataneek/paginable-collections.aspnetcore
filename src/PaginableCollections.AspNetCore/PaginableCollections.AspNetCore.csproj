@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <Description>A light weight pagination framework</Description>
+    <Description>A set helpful extensions for Microsoft.Extensions.DependencyInjection.</Description>
     <Copyright>Copyright Nicholas Myers</Copyright>
     <VersionPrefix>0.1.0</VersionPrefix>
     <Authors>Nicholas Myers</Authors>
