@@ -1,11 +1,10 @@
 ﻿namespace PaginableCollections.AspNetCore
 {
-    using System;
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.Filters;
 
-    public class ExpandedActionFilter : IAsyncActionFilter
+    public class ExpandedHeadersActionFilter : IAsyncActionFilter
     {
         private const string HeaderPrefix = "X-Paginable";
 
@@ -13,9 +12,7 @@
         {
             await next();
 
-            var paginable = (context.Result as ObjectResult)?.Value as IPaginable;
-
-            if (paginable != null)
+            if ((context.Result as ObjectResult)?.Value is IPaginable paginable)
             {
                 context.HttpContext.Response.Headers.Add($"{HeaderPrefix}-PageNumber", paginable.PageNumber.ToString());
                 context.HttpContext.Response.Headers.Add($"{HeaderPrefix}-ItemCountPerPage", paginable.ItemCountPerPage.ToString());

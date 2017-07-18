@@ -4,7 +4,7 @@
     {
         public HeaderOptions()
         {
-            this.IsCondensed = true;
+            IsCondensed = true;
         }
 
         public HeaderOptions UseCondensed()
