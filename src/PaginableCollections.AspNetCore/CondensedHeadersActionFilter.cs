@@ -6,13 +6,13 @@
     using Microsoft.Extensions.Options;
     using Newtonsoft.Json;
 
-    public class CondensedActionFilter : IAsyncActionFilter
+    public class CondensedHeadersActionFilter : IAsyncActionFilter
     {
         private const string HeaderPrefix = "X-Paginable";
 
         private readonly IOptions<MvcJsonOptions> options;
 
-        public CondensedActionFilter(IOptions<MvcJsonOptions> options)
+        public CondensedHeadersActionFilter(IOptions<MvcJsonOptions> options)
         {
             this.options = options;
         }
