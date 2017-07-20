@@ -9,7 +9,7 @@ A light weight pagination framework for .NET and .NET Core - now with additional
 
 ### How Do I Use It?
 Configure MVC to use PaginableCollections.
-````csharp
+```csharp
 public void ConfigureServices(IServiceCollection services)
 {
     // important stuff...
@@ -19,7 +19,27 @@ public void ConfigureServices(IServiceCollection services)
         
     // important stuff...
 }
-````
+```
+#### Condensed Headers
+```
+Content-Type →application/json; charset=utf-8
+Date →Thu, 20 Jul 2017 04:31:01 GMT
+Server →Kestrel
+Transfer-Encoding →chunked
+X-Paginable →{"itemCountPerPage":20,"pageNumber":1,"totalItemCount":14,"totalPageCount":1}
+```
+#### Expanded Headers
+```
+Content-Type →application/json; charset=utf-8
+Date →Thu, 20 Jul 2017 04:35:13 GMT
+Server →Kestrel
+Transfer-Encoding →chunked
+X-Paginable-ItemCountPerPage →20
+X-Paginable-PageNumber →1
+X-Paginable-TotalItemCount →14
+X-Paginable-TotalPageCount →1
+```
+
 ### Installing PaginableCollections.AspNetCore
 
 You should install [PaginableCollections.AspNetCore with NuGet](https://www.nuget.org/packages/paginablecollections.aspnetcore):
