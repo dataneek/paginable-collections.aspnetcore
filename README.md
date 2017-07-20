@@ -7,6 +7,19 @@ PaginableCollections.AspNetCore
 
 A light weight pagination framework for .NET and .NET Core - now with additional MVC6 support!
 
+### How Do I Use It?
+Configure MVC to use PaginableCollections.
+````csharp
+public void ConfigureServices(IServiceCollection services)
+{
+    // important stuff...
+    
+    services.AddMvc()
+        .UsePaginableHeaders(u => u.UseCondensed());
+        
+    // important stuff...
+}
+````
 ### Installing PaginableCollections.AspNetCore
 
 You should install [PaginableCollections.AspNetCore with NuGet](https://www.nuget.org/packages/paginablecollections.aspnetcore):
