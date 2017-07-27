@@ -4,10 +4,10 @@
     {
         public PaginationHeader(IPaginable paginable)
         {
-            this.PageNumber = paginable.PageNumber;
-            this.ItemCountPerPage = paginable.ItemCountPerPage;
-            this.TotalItemCount = paginable.TotalItemCount;
-            this.TotalPageCount = paginable.TotalPageCount;
+            PageNumber = paginable.PageNumber;
+            ItemCountPerPage = paginable.ItemCountPerPage;
+            TotalItemCount = paginable.TotalItemCount;
+            TotalPageCount = paginable.TotalPageCount;
         }
 
         public int ItemCountPerPage { get; set; }

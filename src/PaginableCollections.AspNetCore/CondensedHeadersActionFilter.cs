@@ -1,19 +1,18 @@
 ﻿namespace PaginableCollections.AspNetCore
 {
-    using System;
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.Filters;
     using Microsoft.Extensions.Options;
     using Newtonsoft.Json;
 
-    public class CondensedActionFilter : IAsyncActionFilter
+    public class CondensedHeadersActionFilter : IAsyncActionFilter
     {
         private const string HeaderPrefix = "X-Paginable";
 
         private readonly IOptions<MvcJsonOptions> options;
 
-        public CondensedActionFilter(IOptions<MvcJsonOptions> options)
+        public CondensedHeadersActionFilter(IOptions<MvcJsonOptions> options)
         {
             this.options = options;
         }
@@ -22,9 +21,7 @@
         {
             await next();
 
-            var paginable = (context.Result as ObjectResult)?.Value as IPaginable;
-
-            if (paginable != null)
+            if ((context.Result as ObjectResult)?.Value is IPaginable paginable)
             {
                 context.HttpContext.Response.Headers.Add(
                     HeaderPrefix,
