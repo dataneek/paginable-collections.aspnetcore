@@ -10,15 +10,18 @@
             return builder.UsePaginableHeaders(t => t.UseExpanded());
         }
 
-        public static IMvcBuilder UsePaginableHeaders(this IMvcBuilder builder, Action<HeaderOptions> options)
+        public static IMvcBuilder UsePaginableHeaders(this IMvcBuilder builder, Action<HeaderFormatOptions> options)
         {
-            var o = new HeaderOptions();
+            var o = new HeaderFormatOptions();
             options(o);
 
-            if (o.IsCondensed)
-                return builder.AddMvcOptions(t => t.Filters.Add(typeof(CondensedHeadersActionFilter)));
-            else
-                return builder.AddMvcOptions(t => t.Filters.Add(typeof(ExpandedHeadersActionFilter)));
+            switch (o.HeaderFormat)
+            {
+                case HeaderFormat.Expanded:
+                    return builder.AddMvcOptions(t => t.Filters.Add(typeof(ExpandedHeadersActionFilter)));
+                default:
+                    return builder.AddMvcOptions(t => t.Filters.Add(typeof(CondensedHeadersActionFilter)));
+            } 
         }
     }
 }
