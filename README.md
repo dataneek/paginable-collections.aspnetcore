@@ -1,7 +1,7 @@
 PaginableCollections.AspNetCore
 ====================
 
-[![Build status](https://ci.appveyor.com/api/projects/status/t9xr3cp9vuc739gq?svg=true)](https://ci.appveyor.com/project/neekgreen/paginablecollections.aspnetcore)
+[![Build status](https://ci.appveyor.com/api/projects/status/t9xr3cp9vuc739gq?svg=true)](https://ci.appveyor.com/project/neekgreen/paginablecollections-aspnetcore)
 [![NuGet](https://img.shields.io/nuget/v/paginablecollections.aspnetcore.svg)](https://www.nuget.org/packages/paginablecollections.aspnetcore) 
 [![NuGet](https://img.shields.io/nuget/dt/paginablecollections.aspnetcore.svg)](https://www.nuget.org/packages/paginablecollections.aspnetcore) 
 
