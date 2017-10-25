@@ -1,4 +1,4 @@
-﻿namespace PaginableCollections.AspNetCore.Tests
+﻿namespace PaginableCollections.AspNetCore
 {
     using System.IO;
     using Microsoft.AspNetCore.Builder;

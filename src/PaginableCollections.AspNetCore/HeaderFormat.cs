@@ -3,6 +3,7 @@
     public enum HeaderFormat
     {
         Condensed = 0,
-        Expanded = 1
+        Expanded = 1,
+        LinkBased = 2
     }
 }
