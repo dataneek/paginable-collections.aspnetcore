@@ -1,6 +1,6 @@
 var target = Argument("target", "Default");
 var configuration = Argument("configuration", "Release");
-var buildDirectory = Directory("./artifacts");
+var buildDirectory = Directory("./output");
 
 Task("Clean")
     .Does(() =>
