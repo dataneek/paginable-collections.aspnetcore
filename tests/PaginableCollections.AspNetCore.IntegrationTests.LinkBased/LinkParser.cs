@@ -29,18 +29,18 @@ namespace PaginableCollections.AspNetCore.IntegrationTests.LinkBased
                         continue;
 
                     string linkPart = segments[0].Trim();
-                    if (!linkPart.StartsWith("<") || !linkPart.EndsWith(">")) //$NON-NLS-1$ //$NON-NLS-2$
+                    if (!linkPart.StartsWith("<") || !linkPart.EndsWith(">"))
                         continue;
                     linkPart = linkPart.Substring(1, linkPart.Length - 2);
 
                     for (int i = 1; i < segments.Length; i++)
                     {
-                        string[] rel = segments[i].Trim().Split("="); //$NON-NLS-1$
+                        string[] rel = segments[i].Trim().Split("=");
                         if (rel.Length < 2 || !"rel".Equals(rel[0]))
                             continue;
 
                         string relValue = rel[1];
-                        if (relValue.StartsWith("\"") && relValue.EndsWith("\"")) //$NON-NLS-1$ //$NON-NLS-2$
+                        if (relValue.StartsWith("\"") && relValue.EndsWith("\""))
                             relValue = relValue.Substring(1, relValue.Length - 2);
 
                         if ("first".Equals(relValue))
