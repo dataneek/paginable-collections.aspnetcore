@@ -28,5 +28,17 @@ namespace PaginableCollections.AspNetCore.IntegrationTests.LinkBased
 
             return response;
         }
+
+        [Fact]
+        public async Task ShouldDoSomething()
+        {
+            var result = await GetResult(1, 5);
+            var content = await result.Content.ReadAsStringAsync();
+
+            var header = result.Headers.FirstOrDefault(t => t.Key == "X-Paginable");
+            var value = header.Value;
+
+            Assert.True(value != null);
+        }
     }
 }
