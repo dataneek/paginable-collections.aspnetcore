@@ -22,6 +22,6 @@
   </ItemGroup>
   <PropertyGroup>
     <GenerateProgramFile>false</GenerateProgramFile>
-    <AssemblyName>PaginableCollections.AspNetCore.Tests</AssemblyName>
+    <AssemblyName>PaginableCollections.AspNetCore.IntegrationTests.Expanded</AssemblyName>
   </PropertyGroup>
 </Project>
