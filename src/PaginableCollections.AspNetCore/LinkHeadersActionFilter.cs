@@ -21,7 +21,7 @@
                     builder.Add(BuildNavigationLink("prev", paginable.PageNumber - 1, paginable.ItemCountPerPage, urlHelper, context));
                 }
 
-                builder.Add(BuildNavigationLink("current", paginable.TotalPageCount, paginable.ItemCountPerPage, urlHelper, context));
+                builder.Add(BuildNavigationLink("current", paginable.PageNumber, paginable.ItemCountPerPage, urlHelper, context));
 
                 if (paginable.HasNextPage)
                 {
