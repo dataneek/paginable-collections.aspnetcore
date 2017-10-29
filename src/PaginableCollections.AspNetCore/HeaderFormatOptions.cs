@@ -19,5 +19,11 @@
             HeaderFormat = HeaderFormat.Expanded;
             return this;
         }
+
+        public HeaderFormatOptions UseLinkBased()
+        {
+            HeaderFormat = HeaderFormat.LinkBased;
+            return this;
+        }
     }
 }
