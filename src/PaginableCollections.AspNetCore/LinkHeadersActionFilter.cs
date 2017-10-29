@@ -21,16 +21,15 @@
                     builder.Add(BuildNavigationLink("prev", paginable.PageNumber - 1, paginable.ItemCountPerPage, urlHelper, context));
                 }
 
+                builder.Add(BuildNavigationLink("current", paginable.TotalPageCount, paginable.ItemCountPerPage, urlHelper, context));
+
                 if (paginable.HasNextPage)
                 {
                     builder.Add(BuildNavigationLink("next", paginable.PageNumber + 1, paginable.ItemCountPerPage, urlHelper, context));
                     builder.Add(BuildNavigationLink("last", paginable.TotalPageCount, paginable.ItemCountPerPage, urlHelper, context));
                 }
 
-                if (builder.Any())
-                {
-                    context.HttpContext.Response.Headers.Add("Link", string.Join(",", builder.ToArray()));
-                }
+                context.HttpContext.Response.Headers.Add("Link", string.Join(",", builder.ToArray()));
             }
         }
 
