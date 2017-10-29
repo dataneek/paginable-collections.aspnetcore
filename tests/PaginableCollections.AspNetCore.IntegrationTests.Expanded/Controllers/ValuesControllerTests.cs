@@ -1,5 +1,6 @@
 namespace PaginableCollections.AspNetCore.IntegrationTests.Expanded
 {
+    using System;
     using System.Linq;
     using System.Net.Http;
     using System.Threading.Tasks;
@@ -27,6 +28,60 @@ namespace PaginableCollections.AspNetCore.IntegrationTests.Expanded
             var response = await httpClient.GetAsync(request);
 
             return response;
+        }
+
+        [Fact]
+        public async Task ShouldContainAllExpandedHeaders()
+        {
+            var result = await GetResult(1, 4);
+
+            var pageNumberHeader = result.Headers
+                .FirstOrDefault(t => t.Key == "X-Paginable-PageNumber")
+                .Value.FirstOrDefault();
+
+            var itemCountPerPageHeader = result.Headers
+                .FirstOrDefault(t => t.Key == "X-Paginable-ItemCountPerPage")
+                .Value.FirstOrDefault();
+
+            var totalItemCountHeader = result.Headers
+                .FirstOrDefault(t => t.Key == "X-Paginable-TotalItemCount")
+                .Value.FirstOrDefault();
+
+            var totalPageCountHeader = result.Headers
+                .FirstOrDefault(t => t.Key == "X-Paginable-TotalPageCount")
+                .Value.FirstOrDefault();
+
+            Assert.True(pageNumberHeader == "1");
+            Assert.True(itemCountPerPageHeader == "4");
+            Assert.True(totalItemCountHeader == "20");
+            Assert.True(totalPageCountHeader == "5");
+        }
+
+        [Fact]
+        public async Task ShouldFailOnZeroPageNumber()
+        {
+            var exception = await Record.ExceptionAsync(async () => await GetResult(0, 5));
+
+            Assert.NotNull(exception);
+            Assert.IsType<ArgumentOutOfRangeException>(exception);
+        }
+
+        [Fact]
+        public async Task ShouldFailOnZeroItemCount()
+        {
+            var exception = await Record.ExceptionAsync(async () => await GetResult(1, 0));
+
+            Assert.NotNull(exception);
+            Assert.IsType<ArgumentOutOfRangeException>(exception);
+        }
+
+        [Fact]
+        public async Task ShouldFailOnZeroPageNumberAndZeroItemCount()
+        {
+            var exception = await Record.ExceptionAsync(async () => await GetResult(0, 0));
+
+            Assert.NotNull(exception);
+            Assert.IsType<ArgumentOutOfRangeException>(exception);
         }
     }
 }
