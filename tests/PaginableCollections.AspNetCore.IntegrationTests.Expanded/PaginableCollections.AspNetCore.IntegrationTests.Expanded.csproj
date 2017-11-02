@@ -1,13 +1,10 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Web">
-
+<Project Sdk="Microsoft.NET.Sdk.Web">
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
-  
   <ItemGroup>
     <ProjectReference Include="..\..\src\PaginableCollections.AspNetCore\PaginableCollections.AspNetCore.csproj" />
   </ItemGroup>
-
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Hosting" Version="2.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.TestHost" Version="2.0.0" />
@@ -20,14 +17,11 @@
     <PackageReference Include="xunit.runner.visualstudio" Version="2.3.0" />
     <DotNetCliToolReference Include="dotnet-xunit" Version="2.3.0-beta1-build3642" />
   </ItemGroup>
-
   <ItemGroup>
-    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.1" />
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" />
   </ItemGroup>
-
   <PropertyGroup>
     <GenerateProgramFile>false</GenerateProgramFile>
-    <AssemblyName>PaginableCollections.AspNetCore.Tests</AssemblyName>
+    <AssemblyName>PaginableCollections.AspNetCore.IntegrationTests.Expanded</AssemblyName>
   </PropertyGroup>
-  
 </Project>

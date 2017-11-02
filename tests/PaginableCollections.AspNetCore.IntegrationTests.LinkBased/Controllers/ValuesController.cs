@@ -1,4 +1,4 @@
-﻿namespace PaginableCollections.AspNetCore
+﻿namespace PaginableCollections.AspNetCore.IntegrationTests.LinkBased.Controllers
 {
     using Microsoft.AspNetCore.Mvc;
 
