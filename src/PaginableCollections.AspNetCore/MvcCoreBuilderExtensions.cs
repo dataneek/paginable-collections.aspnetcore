@@ -20,9 +20,11 @@
             {
                 case HeaderFormat.Expanded:
                     return builder.AddMvcOptions(t => t.Filters.Add(typeof(ExpandedHeadersActionFilter)));
+                case HeaderFormat.LinkBased:
+                    return builder.AddMvcOptions(t => t.Filters.Add(typeof(LinkHeadersActionFilter)));
                 default:
                     return builder.AddMvcOptions(t => t.Filters.Add(typeof(CondensedHeadersActionFilter)));
-            } 
+            }
         }
     }
 }

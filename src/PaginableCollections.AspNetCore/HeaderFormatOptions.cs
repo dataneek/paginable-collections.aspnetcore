@@ -23,6 +23,12 @@
             return this;
         }
 
+        public HeaderFormatOptions UseLinkBased()
+        {
+            HeaderFormat = HeaderFormat.LinkBased;
+            return this;
+        }
+
         public void WithNamingScheme(Action<INamingSchemeBuilder> builder)
         {
             builder(this.NamingSchemeBuilder);

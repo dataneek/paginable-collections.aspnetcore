@@ -2,6 +2,7 @@
 {
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.Filters;
+    using Microsoft.AspNetCore.Mvc.Routing;
     using Microsoft.Extensions.Options;
     using Newtonsoft.Json;
 
@@ -18,6 +19,8 @@
 
         void IActionFilter.OnActionExecuted(ActionExecutedContext context)
         {
+            var url = new UrlHelper(context);
+
             if ((context.Result as ObjectResult)?.Value is IPaginable paginable)
             {
                 context.HttpContext.Response.Headers.Add(
