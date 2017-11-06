@@ -14,6 +14,7 @@
         {
             var o = new HeaderFormatOptions();
             options(o);
+            builder.Services.AddSingleton<INamingScheme>(o.NamingSchemeBuilder.Build());
 
             switch (o.HeaderFormat)
             {
