@@ -40,6 +40,15 @@ X-Paginable-TotalItemCount →14
 X-Paginable-TotalPageCount →1
 ```
 
+### Link Based Headers
+```
+<http://localhost/api/values/1/5>; rel="first"
+<http://localhost/api/values/1/5>; rel="previous"
+<http://localhost/api/values/2/5>; rel="current"
+<http://localhost/api/values/3/5>; rel="next"
+<http://localhost/api/values/4/5>; rel="last"
+```
+
 ### Installing PaginableCollections.AspNetCore
 
 You should install [PaginableCollections.AspNetCore with NuGet](https://www.nuget.org/packages/paginablecollections.aspnetcore):
