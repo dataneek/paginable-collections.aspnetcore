@@ -1,11 +1,14 @@
 ﻿namespace PaginableCollections.AspNetCore
 {
+    using System;
+
     public class HeaderFormatOptions
     {
         public HeaderFormatOptions() { }
 
 
         public HeaderFormat HeaderFormat { get; set; } = HeaderFormat.Condensed;
+        public INamingSchemeBuilder NamingSchemeBuilder { get; set; } = new NamingSchemeBuilder();
 
 
         public HeaderFormatOptions UseCondensed()
@@ -24,6 +27,11 @@
         {
             HeaderFormat = HeaderFormat.LinkBased;
             return this;
+        }
+
+        public void WithNamingScheme(Action<INamingSchemeBuilder> builder)
+        {
+            builder(this.NamingSchemeBuilder);
         }
     }
 }

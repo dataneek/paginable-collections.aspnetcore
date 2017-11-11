@@ -18,8 +18,7 @@
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().UsePaginableHeaders(options =>
-                options.UseLinkBased());
+            services.AddMvc().UsePaginableHeaders(options => options.UseLinkBased());
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
