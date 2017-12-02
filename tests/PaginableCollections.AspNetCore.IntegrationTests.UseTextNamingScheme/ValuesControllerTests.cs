@@ -31,24 +31,24 @@ namespace PaginableCollections.AspNetCore
         }
 
         [Fact]
-        public async Task ShouldContainAllExpandedHeaders()
+        public async Task ShouldContainAllTextHeaders()
         {
             var result = await GetResult(1, 4);
 
             var pageNumberHeader = result.Headers
-                .FirstOrDefault(t => t.Key == "X-Paginable-PageNumber")
+                .FirstOrDefault(t => t.Key == "X-Paginable-" + Constants.NamingScheme.PageNumberName)
                 .Value.FirstOrDefault();
 
             var itemCountPerPageHeader = result.Headers
-                .FirstOrDefault(t => t.Key == "X-Paginable-ItemCountPerPage")
+                .FirstOrDefault(t => t.Key == "X-Paginable-" + Constants.NamingScheme.ItemCountPerPageName)
                 .Value.FirstOrDefault();
 
             var totalItemCountHeader = result.Headers
-                .FirstOrDefault(t => t.Key == "X-Paginable-TotalItemCount")
+                .FirstOrDefault(t => t.Key == "X-Paginable-" + Constants.NamingScheme.TotalItemCountName)
                 .Value.FirstOrDefault();
 
             var totalPageCountHeader = result.Headers
-                .FirstOrDefault(t => t.Key == "X-Paginable-TotalPageCount")
+                .FirstOrDefault(t => t.Key == "X-Paginable-" + Constants.NamingScheme.TotalPageCountName)
                 .Value.FirstOrDefault();
 
             Assert.True(pageNumberHeader == "1");

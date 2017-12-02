@@ -25,7 +25,7 @@
   </ItemGroup>
   <PropertyGroup>
     <GenerateProgramFile>true</GenerateProgramFile>
-    <AssemblyName>PaginableCollections.AspNetCore.IntegrationTests.Links</AssemblyName>
+    <AssemblyName>PaginableCollections.AspNetCore.IntegrationTests.UseJsonNamingScheme</AssemblyName>
     <ApplicationIcon />
     <OutputType>Library</OutputType>
     <StartupObject />

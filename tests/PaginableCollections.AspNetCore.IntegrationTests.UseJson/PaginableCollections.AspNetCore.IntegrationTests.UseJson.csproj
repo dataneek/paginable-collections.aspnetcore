@@ -25,7 +25,7 @@
   </ItemGroup>
   <PropertyGroup>
     <GenerateProgramFile>true</GenerateProgramFile>
-    <AssemblyName>PaginableCollections.AspNetCore.IntegrationTests.Text</AssemblyName>
+    <AssemblyName>PaginableCollections.AspNetCore.IntegrationTests.UseJson</AssemblyName>
     <ApplicationIcon />
     <OutputType>Library</OutputType>
     <StartupObject />
