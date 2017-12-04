@@ -9,6 +9,7 @@ namespace PaginableCollections.AspNetCore
         {
             this.Options = options;
             this.Options.FilterType = typeof(UseJsonPaginationResponseHeadersActionFilter);
+            this.Options.NamingScheme = NamingScheme.Default;
         }
 
         public HeaderFormatOptions Options { get; set; }

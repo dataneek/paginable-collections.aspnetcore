@@ -25,22 +25,22 @@
             sut.Options.FilterType.ShouldBeEquivalentTo(typeof(UseJsonPaginationResponseHeadersActionFilter));
         }
 
-        //[Fact]
-        //public void ShouldHaveNamingScheme()
-        //{
-        //    var options = new HeaderFormatOptions();
-        //    var sut = new JsonHeaderFormatOptionsBuilder(options);
+        [Fact]
+        public void ShouldHaveNamingScheme()
+        {
+            var options = new HeaderFormatOptions();
+            var sut = new JsonHeaderFormatOptionsBuilder(options);
 
-        //    sut.Options.NamingScheme.Should().NotBeNull();
-        //}
+            sut.Options.NamingScheme.Should().NotBeNull();
+        }
 
-        //[Fact]
-        //public void ShouldHaveDefaultNamingScheme()
-        //{
-        //    var options = new HeaderFormatOptions();
-        //    var sut = new JsonHeaderFormatOptionsBuilder(options);
+        [Fact]
+        public void ShouldHaveDefaultNamingScheme()
+        {
+            var options = new HeaderFormatOptions();
+            var sut = new JsonHeaderFormatOptionsBuilder(options);
 
-        //    sut.Options.NamingScheme.ShouldBeEquivalentTo(NamingScheme.Default);
-        //}
+            sut.Options.NamingScheme.ShouldBeEquivalentTo(NamingScheme.Default);
+        }
     }
 }
