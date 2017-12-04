@@ -1,13 +1,11 @@
 namespace PaginableCollections.AspNetCore
-{
-    using PaginableCollections.AspNetCore.Filters;
-    
+{   
    public class LinkHeaderFormatOptionsBuilder : ILinkHeaderFormatOptionsBuilder
     {
         public LinkHeaderFormatOptionsBuilder(HeaderFormatOptions options)
         {
             this.Options = options;
-            this.Options.FilterType = typeof(LinkHeadersActionFilter);
+            this.Options.FilterType = typeof(UseLinkPaginationHeadersActionFilter);
             this.Options.NamingScheme = null;
         }
 

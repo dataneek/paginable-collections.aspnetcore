@@ -2,7 +2,7 @@ namespace PaginableCollections.AspNetCore
 {
     using System;
     using Microsoft.Extensions.DependencyInjection;
-    using PaginableCollections.AspNetCore.Mvc;
+    using PaginableCollections.AspNetCore.Internal;
 
     internal static class BuilderContextExtensions
     {

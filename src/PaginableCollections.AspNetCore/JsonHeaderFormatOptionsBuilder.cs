@@ -1,7 +1,6 @@
 namespace PaginableCollections.AspNetCore
 {
     using System;
-    using PaginableCollections.AspNetCore.Filters;
     using PaginableCollections.AspNetCore.NamingSchemes;
     
     public class JsonHeaderFormatOptionsBuilder : IJsonHeaderFormatOptionsBuilder
@@ -9,7 +8,7 @@ namespace PaginableCollections.AspNetCore
         public JsonHeaderFormatOptionsBuilder(HeaderFormatOptions options)
         {
             this.Options = options;
-            this.Options.FilterType = typeof(JsonHeadersActionFilter);
+            this.Options.FilterType = typeof(UseJsonPaginationResponseHeadersActionFilter);
         }
 
         public HeaderFormatOptions Options { get; set; }

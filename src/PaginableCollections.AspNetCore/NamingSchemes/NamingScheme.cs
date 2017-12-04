@@ -12,9 +12,9 @@
         public NamingScheme(string pageNumberName, string itemCountPerPageName, string totalItemCountName, string totalPageCountName)
         {
             PageNumberName = pageNumberName;
-            ItemCountPerPageName = ItemCountPerPageName;
+            ItemCountPerPageName = itemCountPerPageName;
             TotalItemCountName = totalItemCountName;
-            TotalPageCountName = TotalPageCountName;
+            TotalPageCountName = totalPageCountName;
         }
 
         public string TotalItemCountName { get; private set; }

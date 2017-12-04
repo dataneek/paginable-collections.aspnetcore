@@ -1,14 +1,14 @@
-namespace PaginableCollections.AspNetCore.Mvc
+namespace PaginableCollections.AspNetCore.Internal
 {
     using System;
     using Microsoft.Extensions.DependencyInjection;
     using PaginableCollections.AspNetCore.NamingSchemes;
 
-    public class MvcCoreBuilderContextAdapter : IBuilderContext
+    public class MvcBuilderContextAdapter : IBuilderContext
     {
-        private readonly IMvcCoreBuilder builder;
+        private readonly IMvcBuilder builder;
 
-        public MvcCoreBuilderContextAdapter(IMvcCoreBuilder builder)
+        public MvcBuilderContextAdapter(IMvcBuilder builder)
         {
             this.builder = builder;
         }

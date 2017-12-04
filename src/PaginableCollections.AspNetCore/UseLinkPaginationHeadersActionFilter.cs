@@ -1,14 +1,13 @@
-﻿namespace PaginableCollections.AspNetCore.Filters
+﻿namespace PaginableCollections.AspNetCore
 {
-    using System.Linq;
     using System.Collections.Generic;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.Filters;
     using Microsoft.AspNetCore.Mvc.Routing;
 
-    public class LinkHeadersActionFilter : IActionFilter
+    public class UseLinkPaginationHeadersActionFilter : ActionFilterAttribute
     {
-        void IActionFilter.OnActionExecuted(ActionExecutedContext context)
+        public override void OnActionExecuted(ActionExecutedContext context)
         {
             if ((context.Result as ObjectResult)?.Value is IPaginable paginable)
             {
@@ -32,8 +31,6 @@
                 context.HttpContext.Response.Headers.Add("Link", string.Join(",", builder.ToArray()));
             }
         }
-
-        void IActionFilter.OnActionExecuting(ActionExecutingContext context) { }
 
         private string BuildNavigationLink(string rel, int pageNumber, int itemCountPerPage, IUrlHelper urlHelper, ActionExecutedContext context)
         {

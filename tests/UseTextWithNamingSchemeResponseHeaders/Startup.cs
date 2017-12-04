@@ -2,16 +2,15 @@
 {
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
-    using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
 
-    public class StartupCustomNamingScheme
+    public class Startup
     {
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc()
                 .UsePaginableHeaders(o =>
-                    o.UseJson()
+                    o.UseText()
                         .WithNamingScheme(s=>
                         {
                             s.PageNumberNamed(Constants.NamingScheme.PageNumberName);

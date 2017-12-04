@@ -1,7 +1,6 @@
 namespace PaginableCollections.AspNetCore
 {
     using System;
-    using PaginableCollections.AspNetCore.Filters;
     using PaginableCollections.AspNetCore.NamingSchemes;
 
     public class TextHeaderFormatOptionsBuilder : ITextHeaderFormatOptionsBuilder
@@ -9,7 +8,8 @@ namespace PaginableCollections.AspNetCore
         public TextHeaderFormatOptionsBuilder(HeaderFormatOptions options)
         {
             this.Options = options;
-            this.Options.FilterType = typeof(TextHeadersActionFilter);
+            this.Options.FilterType = typeof(UseTextPaginationResponseHeadersActionFilter);
+            this.Options.NamingScheme = NamingScheme.Default;
         }
 
         public HeaderFormatOptions Options { get; set; }

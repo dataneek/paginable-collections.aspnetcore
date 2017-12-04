@@ -1,8 +1,6 @@
 ﻿namespace PaginableCollections.AspNetCore
 {   
     using System;
-    using Microsoft.AspNetCore.Mvc.Filters;
-    using Microsoft.Extensions.DependencyInjection;
     using PaginableCollections.AspNetCore.NamingSchemes;
 
     public class HeaderFormatOptions

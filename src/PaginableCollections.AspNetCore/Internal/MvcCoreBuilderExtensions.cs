@@ -2,7 +2,7 @@
 {
     using System;
     using PaginableCollections.AspNetCore;
-    using PaginableCollections.AspNetCore.Mvc;
+    using PaginableCollections.AspNetCore.Internal;
 
     public static class MvcCoreBuilderExtensions
     {

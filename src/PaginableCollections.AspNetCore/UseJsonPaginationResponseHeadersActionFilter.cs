@@ -1,26 +1,23 @@
-﻿namespace PaginableCollections.AspNetCore.Filters
+﻿namespace PaginableCollections.AspNetCore
 {
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.Filters;
-    using Microsoft.AspNetCore.Mvc.Routing;
     using Microsoft.Extensions.Options;
     using Newtonsoft.Json;
 
-    public class JsonHeadersActionFilter : IActionFilter
+    public class UseJsonPaginationResponseHeadersActionFilter : ActionFilterAttribute
     {
         private const string HeaderPrefix = "X-Paginable";
 
         private readonly IOptions<MvcJsonOptions> options;
 
-        public JsonHeadersActionFilter(IOptions<MvcJsonOptions> options)
+        public UseJsonPaginationResponseHeadersActionFilter(IOptions<MvcJsonOptions> options)
         {
             this.options = options;
         }
 
-        void IActionFilter.OnActionExecuted(ActionExecutedContext context)
+        public override void OnActionExecuted(ActionExecutedContext context)
         {
-            var url = new UrlHelper(context);
-
             if ((context.Result as ObjectResult)?.Value is IPaginable paginable)
             {
                 context.HttpContext.Response.Headers.Add(
@@ -29,7 +26,5 @@
                         new PaginationHeader(paginable), options.Value.SerializerSettings));
             }
         }
-
-        void IActionFilter.OnActionExecuting(ActionExecutingContext context) { }
     }
 }
