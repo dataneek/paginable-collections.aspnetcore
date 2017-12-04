@@ -17,6 +17,7 @@
                             s.ItemCountPerPageNamed(Constants.NamingScheme.ItemCountPerPageName);
                             s.TotalItemCountNamed(Constants.NamingScheme.TotalItemCountName);
                             s.TotalPageCountNamed(Constants.NamingScheme.TotalPageCountName);
+                            s.HeaderKeyNamed(Constants.NamingScheme.HeaderKey);
                         }));
         }
 

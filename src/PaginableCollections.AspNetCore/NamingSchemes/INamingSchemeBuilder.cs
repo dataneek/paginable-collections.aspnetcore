@@ -6,6 +6,7 @@
         INamingSchemeBuilder ItemCountPerPageNamed(string itemCountPerPageName);
         INamingSchemeBuilder TotalItemCountNamed(string totalItemCountName);
         INamingSchemeBuilder TotalPageCountNamed(string totalPageCountName);
+        INamingSchemeBuilder HeaderKeyNamed(string headerKeyName);
 
         INamingScheme Build();
     }

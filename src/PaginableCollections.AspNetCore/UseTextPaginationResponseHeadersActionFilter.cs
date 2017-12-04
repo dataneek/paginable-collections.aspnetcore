@@ -6,8 +6,6 @@
 
     public class UseTextPaginationResponseHeadersActionFilter : ActionFilterAttribute
     {
-        private const string HeaderPrefix = "X-Paginable";
-
         private readonly INamingScheme namingScheme;
 
         public UseTextPaginationResponseHeadersActionFilter(INamingScheme namingScheme)
@@ -19,10 +17,10 @@
         {
             if ((context.Result as ObjectResult)?.Value is IPaginable paginable)
             {
-                context.HttpContext.Response.Headers.Add($"{HeaderPrefix}-{namingScheme.PageNumberName}", paginable.PageNumber.ToString());
-                context.HttpContext.Response.Headers.Add($"{HeaderPrefix}-{namingScheme.ItemCountPerPageName}", paginable.ItemCountPerPage.ToString());
-                context.HttpContext.Response.Headers.Add($"{HeaderPrefix}-{namingScheme.TotalItemCountName}", paginable.TotalItemCount.ToString());
-                context.HttpContext.Response.Headers.Add($"{HeaderPrefix}-{namingScheme.TotalPageCountName}", paginable.TotalPageCount.ToString());
+                context.HttpContext.Response.Headers.Add($"{namingScheme.HeaderKeyName}-{namingScheme.PageNumberName}", paginable.PageNumber.ToString());
+                context.HttpContext.Response.Headers.Add($"{namingScheme.HeaderKeyName}-{namingScheme.ItemCountPerPageName}", paginable.ItemCountPerPage.ToString());
+                context.HttpContext.Response.Headers.Add($"{namingScheme.HeaderKeyName}-{namingScheme.TotalItemCountName}", paginable.TotalItemCount.ToString());
+                context.HttpContext.Response.Headers.Add($"{namingScheme.HeaderKeyName}-{namingScheme.TotalPageCountName}", paginable.TotalPageCount.ToString());
             }
         }
     }

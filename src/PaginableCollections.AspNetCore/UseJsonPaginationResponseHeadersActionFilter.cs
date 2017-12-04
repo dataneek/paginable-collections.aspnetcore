@@ -9,8 +9,6 @@
 
     public class UseJsonPaginationResponseHeadersActionFilter : ActionFilterAttribute
     {
-        private const string HeaderPrefix = "X-Paginable";
-
         private readonly INamingScheme namingScheme;
         private readonly IOptions<MvcJsonOptions> options;
 
@@ -25,7 +23,7 @@
             if ((context.Result as ObjectResult)?.Value is IPaginable paginable)
             {
                 context.HttpContext.Response.Headers.Add(
-                    HeaderPrefix,
+                    namingScheme.HeaderKeyName,
                     JsonConvert.SerializeObject(
                         GetPaginationOutput(paginable), options.Value.SerializerSettings));
             }

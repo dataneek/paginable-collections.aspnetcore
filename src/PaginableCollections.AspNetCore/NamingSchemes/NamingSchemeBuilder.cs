@@ -6,6 +6,7 @@
         public string TotalPageCountName { get; private set; }
         public string PageNumberName { get; private set; }
         public string ItemCountPerPageName { get; private set; }
+        public string HeaderKeyName { get; private set; }
 
         public INamingScheme Build()
         {
@@ -13,7 +14,8 @@
                 PageNumberName ?? NamingScheme.Default.PageNumberName,
                 ItemCountPerPageName ?? NamingScheme.Default.ItemCountPerPageName,
                 TotalItemCountName ?? NamingScheme.Default.TotalItemCountName,
-                TotalPageCountName ?? NamingScheme.Default.TotalPageCountName);
+                TotalPageCountName ?? NamingScheme.Default.TotalPageCountName,
+                HeaderKeyName ?? NamingScheme.Default.HeaderKeyName);
         }
 
         public INamingSchemeBuilder ItemCountPerPageNamed(string itemCountPerPageName)
@@ -37,6 +39,12 @@
         public INamingSchemeBuilder TotalPageCountNamed(string totalPageCountName)
         {
             TotalPageCountName = totalPageCountName;
+            return this;
+        }
+
+        public INamingSchemeBuilder HeaderKeyNamed(string headerKeyName)
+        {
+            HeaderKeyName = headerKeyName;
             return this;
         }
     }

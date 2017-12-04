@@ -36,19 +36,19 @@ namespace PaginableCollections.AspNetCore
             var result = await GetResult(1, 4);
 
             var pageNumberHeader = result.Headers
-                .FirstOrDefault(t => t.Key == "X-Paginable-" + Constants.NamingScheme.PageNumberName)
+                .FirstOrDefault(t => t.Key == $"{Constants.NamingScheme.HeaderKey}-{Constants.NamingScheme.PageNumberName}")
                 .Value.FirstOrDefault();
 
             var itemCountPerPageHeader = result.Headers
-                .FirstOrDefault(t => t.Key == "X-Paginable-" + Constants.NamingScheme.ItemCountPerPageName)
+                .FirstOrDefault(t => t.Key == $"{Constants.NamingScheme.HeaderKey}-{Constants.NamingScheme.ItemCountPerPageName}")
                 .Value.FirstOrDefault();
 
             var totalItemCountHeader = result.Headers
-                .FirstOrDefault(t => t.Key == "X-Paginable-" + Constants.NamingScheme.TotalItemCountName)
+                .FirstOrDefault(t => t.Key == $"{Constants.NamingScheme.HeaderKey}-{Constants.NamingScheme.TotalItemCountName}")
                 .Value.FirstOrDefault();
 
             var totalPageCountHeader = result.Headers
-                .FirstOrDefault(t => t.Key == "X-Paginable-" + Constants.NamingScheme.TotalPageCountName)
+                .FirstOrDefault(t => t.Key == $"{Constants.NamingScheme.HeaderKey}-{Constants.NamingScheme.TotalPageCountName}")
                 .Value.FirstOrDefault();
 
             Assert.True(pageNumberHeader == "1");
