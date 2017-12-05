@@ -1,23 +1,26 @@
 ﻿namespace PaginableCollections.AspNetCore
-{
+{   
+    using System;
+    using PaginableCollections.AspNetCore.NamingSchemes;
+
     public class HeaderFormatOptions
     {
-        public HeaderFormatOptions() { }
+        public INamingScheme NamingScheme { get; set; }
+        public Type FilterType { get; set; }
 
-
-        public HeaderFormat HeaderFormat { get; set; } = HeaderFormat.Condensed;
-
-
-        public HeaderFormatOptions UseCondensed()
+        public IJsonHeaderFormatOptionsBuilder UseJson()
         {
-            HeaderFormat = HeaderFormat.Condensed;
-            return this;
+            return new JsonHeaderFormatOptionsBuilder(this);
         }
 
-        public HeaderFormatOptions UseExpanded()
+        public ITextHeaderFormatOptionsBuilder UseText()
         {
-            HeaderFormat = HeaderFormat.Expanded;
-            return this;
+            return new TextHeaderFormatOptionsBuilder(this);
+        }
+
+        public ILinkHeaderFormatOptionsBuilder UseLinks()
+        {
+            return new LinkHeaderFormatOptionsBuilder(this);
         }
     }
 }
